@@ -163,7 +163,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id) sender {
     UITableViewCell *cell = sender;
     NSIndexPath *myIndexPath = [self.tableView indexPathForCell:cell];
-    NSDictionary *dataToPass = self.myArray[myIndexPath.row];
+    NSDictionary *dataToPass = self.filteredData[myIndexPath.row];
     // Get the new view controller using [segue destinationViewController].
     // [segue destinationViewController] is a reference to the view controller that is going to be popped onto the navigation stack
     DetailsViewController *detailVC = [segue destinationViewController];
