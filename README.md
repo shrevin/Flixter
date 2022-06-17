@@ -44,13 +44,12 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-
-GIF created with [Kap](https://getkap.co/).
+![](https://github.com/shrevin/Flixter/blob/main/ezgif.com-gif-maker.gif)
 
 ## Notes
 
 Describe any challenges encountered while building the app.
+
 A challenge that I encountered was figuring out how to share data from the view controller displaying a table view of the movies to the view controller displaying information about one movie. I figure out how to pass data from the prepareForSegue method. Another challenge I encountered was figuring out how to add the search bar. 
 
 ## Credits
