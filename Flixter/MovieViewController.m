@@ -11,14 +11,17 @@
 #import "DetailsViewController.h"
 
 // .m file is like a private class
-@interface MovieViewController () <UITableViewDataSource, UITableViewDelegate> // this syntax means that this class implements the UITableViewDataSource and UITableViewDelegate protocol
+@interface MovieViewController () <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate> // this syntax means that this class implements the UITableViewDataSource and UITableViewDelegate protocol
 // the UITableViewDataSource protocol shows the TableView content
 // UITableViewDelegate protocol does not have mandatory methods, but gives you opportunity to do things when the table view scrolls, selects a cell...etc
 // properties are member variables (they are typically in interface)
 @property (nonatomic, strong) NSArray *myArray;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
+@property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (strong, nonatomic) NSArray *filteredData;
+@property (strong, nonatomic) NSMutableArray *data;
 
 @end
 
@@ -27,18 +30,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.activityIndicator startAnimating];
-    
-    
-    
     // Setting the data source and delegate equal to the view controller
     self.tableView.dataSource = self; // says that table view is expecting a data source given to it by the view controller
     self.tableView.delegate = self;
+    self.searchBar.delegate = self;
     [self fetchMovies];
-    
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(fetchMovies) forControlEvents:UIControlEventValueChanged];
     // [self.tableView addSubview:self.refreshControl];
     [self.tableView insertSubview:self.refreshControl atIndex:0];
+    
+    self.filteredData = self.myArray;
 
 }
 
@@ -85,10 +87,11 @@
 //               self.myArray = temp_array;
                self.myArray = dataDictionary[@"results"];
                // TODO: Reload your table view data
-               [self.tableView reloadData];
+               
                [self.activityIndicator stopAnimating];
                self.filteredData = self.myArray;
-              
+               [self.tableView reloadData];
+               
            }
         [self.refreshControl endRefreshing];
        }];
@@ -100,7 +103,8 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.myArray.count;
+    NSLog(@"rows: %d", self.filteredData.count);
+    return self.filteredData.count;
     
 }
 
@@ -109,7 +113,7 @@
 //    // creating a UITableViewCell
 //    UITableViewCell *cell = [[UITableViewCell alloc] init]; // alloc means "create me an instance of it", and init calls initializer
     MovieCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MovieCell"];
-    NSDictionary *movie = self.myArray[indexPath.row]; // all the metadata of each movie
+    NSDictionary *movie = self.filteredData[indexPath.row]; // all the metadata of each movie
     cell.titleLabel.text = movie[@"title"];
     cell.synopsisLabel.text = movie[@"overview"];
     NSString *baseURLString = @"https://image.tmdb.org/t/p/w500";
@@ -118,8 +122,38 @@
     NSURL *posterURL = [NSURL URLWithString:fullPosterURLString];
     cell.posterView.image = nil; // clearing out previous image before setting new one for a cleaner look
     [cell.posterView setImageWithURL:posterURL];
+    
+    // changing color when selecting cell
+    UIView *bgColorView = [[UIView alloc] init];
+    [bgColorView setBackgroundColor:[UIColor darkGrayColor]];
+    bgColorView.layer.cornerRadius = 10;
+    [cell setSelectedBackgroundView:bgColorView];
+    
     return cell;
 }
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    
+    if (searchText.length != 0) {
+        
+        NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(NSDictionary *movie, NSDictionary *bindings) {
+            NSString *title = movie[@"title"];
+            return [title containsString:searchText];
+        }];
+        
+        self.filteredData = [self.myArray filteredArrayUsingPredicate:predicate];
+        
+        //NSLog(@"%@", self.filteredData);
+        
+    }
+    else {
+        self.filteredData = self.myArray;
+    }
+    
+    [self.tableView reloadData];
+ 
+}
+
 
 #pragma mark - Navigation
 
@@ -141,6 +175,5 @@
     
     
 }
-
 
 @end

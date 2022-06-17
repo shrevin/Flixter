@@ -8,6 +8,7 @@
 #import "GridViewController.h"
 #import "CollectionViewCell.h"
 #import "UIImageView+AFNetworking.h"
+#import "DetailsViewController.h""
 
 @interface GridViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 @property (nonatomic, strong) NSArray *myArray;
@@ -86,14 +87,21 @@
 
 
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    UICollectionViewCell *cell = sender;
+    NSIndexPath *myIndexPath = [self.collectionView indexPathForCell:cell];
+    NSDictionary *dataToPass = self.myArray[myIndexPath.row];
     // Get the new view controller using [segue destinationViewController].
+    // [segue destinationViewController] is a reference to the view controller that is going to be popped onto the navigation stack
+    DetailsViewController *detailVC = [segue destinationViewController];
     // Pass the selected object to the new view controller.
+    detailVC.detailDict = dataToPass;
+    detailVC.myPath = myIndexPath;
 }
-*/
+
 
 @end

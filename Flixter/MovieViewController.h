@@ -10,7 +10,6 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MovieViewController : UIViewController
-@property (strong, nonatomic) NSArray *filteredData;
 @end
 
 NS_ASSUME_NONNULL_END
