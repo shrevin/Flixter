@@ -16,7 +16,6 @@
 // UITableViewDelegate protocol does not have mandatory methods, but gives you opportunity to do things when the table view scrolls, selects a cell...etc
 // properties are member variables (they are typically in interface)
 @property (nonatomic, strong) NSArray *myArray;
-@property (strong, nonatomic) NSArray *filteredData;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
@@ -45,7 +44,6 @@
 
 - (void)fetchMovies {
     
-    self.filteredData = self.myArray;
     // 1. Create URL
     NSURL *url = [NSURL URLWithString:@"https://api.themoviedb.org/3/movie/now_playing?api_key=9d44e7197700f244d88a956e57d35776"];
     
@@ -89,6 +87,7 @@
                // TODO: Reload your table view data
                [self.tableView reloadData];
                [self.activityIndicator stopAnimating];
+               self.filteredData = self.myArray;
               
            }
         [self.refreshControl endRefreshing];
@@ -126,11 +125,13 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
  
+// sender refers to whatever view triggered the segue (in this case, the sender is the cell that triggered the segue)
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id) sender {
     UITableViewCell *cell = sender;
     NSIndexPath *myIndexPath = [self.tableView indexPathForCell:cell];
     NSDictionary *dataToPass = self.myArray[myIndexPath.row];
     // Get the new view controller using [segue destinationViewController].
+    // [segue destinationViewController] is a reference to the view controller that is going to be popped onto the navigation stack
     DetailsViewController *detailVC = [segue destinationViewController];
     // Pass the selected object to the new view controller.
     detailVC.detailDict = dataToPass;

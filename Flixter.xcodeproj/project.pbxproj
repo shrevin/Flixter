@@ -21,6 +21,8 @@
 		7B60C7B2285A4DD500DA91F3 /* FlixterUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B60C7B1285A4DD500DA91F3 /* FlixterUITestsLaunchTests.m */; };
 		7B60C7C0285A55CD00DA91F3 /* MovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B60C7BF285A55CD00DA91F3 /* MovieViewController.m */; };
 		7B99FFBC285BCF0E0091EA09 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B99FFBB285BCF0E0091EA09 /* DetailsViewController.m */; };
+		7B99FFBF285C44510091EA09 /* GridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B99FFBE285C44510091EA09 /* GridViewController.m */; };
+		7B99FFC2285C44AE0091EA09 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B99FFC1285C44AE0091EA09 /* CollectionViewCell.m */; };
 		D10BC4653D7D3E3EDB58EE12 /* Pods_Flixter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DAA7C399D62CE8A4784267C /* Pods_Flixter.framework */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +72,10 @@
 		7B60C7BF285A55CD00DA91F3 /* MovieViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieViewController.m; sourceTree = "<group>"; };
 		7B99FFBA285BCF0E0091EA09 /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
 		7B99FFBB285BCF0E0091EA09 /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
+		7B99FFBD285C44510091EA09 /* GridViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GridViewController.h; sourceTree = "<group>"; };
+		7B99FFBE285C44510091EA09 /* GridViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GridViewController.m; sourceTree = "<group>"; };
+		7B99FFC0285C44AE0091EA09 /* CollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
+		7B99FFC1285C44AE0091EA09 /* CollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
 		7EF348EFDB36CB2C51B4A998 /* Pods-FlixterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlixterTests.release.xcconfig"; path = "Target Support Files/Pods-FlixterTests/Pods-FlixterTests.release.xcconfig"; sourceTree = "<group>"; };
 		B9D0021DD140AE3AF8A18E85 /* Pods-FlixterTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlixterTests.debug.xcconfig"; path = "Target Support Files/Pods-FlixterTests/Pods-FlixterTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -155,6 +161,10 @@
 				7B60C78C285A4DD400DA91F3 /* SceneDelegate.h */,
 				7B60C78D285A4DD400DA91F3 /* SceneDelegate.m */,
 				7B60C792285A4DD400DA91F3 /* Main.storyboard */,
+				7B99FFBD285C44510091EA09 /* GridViewController.h */,
+				7B99FFBE285C44510091EA09 /* GridViewController.m */,
+				7B99FFC0285C44AE0091EA09 /* CollectionViewCell.h */,
+				7B99FFC1285C44AE0091EA09 /* CollectionViewCell.m */,
 				7B99FFBA285BCF0E0091EA09 /* DetailsViewController.h */,
 				7B99FFBB285BCF0E0091EA09 /* DetailsViewController.m */,
 				7B60C7BE285A55CD00DA91F3 /* MovieViewController.h */,
@@ -427,8 +437,10 @@
 				7B60C78B285A4DD400DA91F3 /* AppDelegate.m in Sources */,
 				7B3BDFD2285AA56100EFCB48 /* MovieCell.m in Sources */,
 				7B60C79C285A4DD500DA91F3 /* main.m in Sources */,
+				7B99FFBF285C44510091EA09 /* GridViewController.m in Sources */,
 				7B99FFBC285BCF0E0091EA09 /* DetailsViewController.m in Sources */,
 				7B60C78E285A4DD400DA91F3 /* SceneDelegate.m in Sources */,
+				7B99FFC2285C44AE0091EA09 /* CollectionViewCell.m in Sources */,
 				7B60C7C0285A55CD00DA91F3 /* MovieViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
