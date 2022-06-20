@@ -41,6 +41,7 @@
     [self.tableView insertSubview:self.refreshControl atIndex:0];
     
     self.filteredData = self.myArray;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
 
 }
 
@@ -77,7 +78,7 @@
                NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
                // TODO: Get the array of movies
 //               NSArray*keys=[dataDictionary allKeys]; // getting all keys in data dictionary
-               NSLog(@"%@", dataDictionary);// log an object with the %@ formatter.
+               // NSLog(@"%@", dataDictionary);// log an object with the %@ formatter.
 //               // TODO: Store the movies in a property to use elsewhere
 //               // self.myArray = dataDictionary[keys];
 //               NSMutableArray *temp_array = [[NSMutableArray alloc]init];
@@ -103,7 +104,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSLog(@"rows: %d", self.filteredData.count);
+    // NSLog(@"rows: %d", self.filteredData.count);
     return self.filteredData.count;
     
 }

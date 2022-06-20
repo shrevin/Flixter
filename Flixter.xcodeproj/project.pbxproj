@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1DAC370E0FB82FCDAF37A745 /* Pods_Flixter_FlixterUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72800E2F583B135D5DACF0AC /* Pods_Flixter_FlixterUITests.framework */; };
 		2AC82D121345D9DE1F1C93D4 /* Pods_FlixterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D2F45989C71582D5E5979FE /* Pods_FlixterTests.framework */; };
+		7B061CB4285FA83D006E70C6 /* YTPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B061CB3285FA83D006E70C6 /* YTPlayerView.m */; };
+		7B061CBC285FA8FD006E70C6 /* YoutubeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B061CBB285FA8FD006E70C6 /* YoutubeViewController.m */; };
 		7B3BDFD2285AA56100EFCB48 /* MovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B3BDFD1285AA56100EFCB48 /* MovieCell.m */; };
 		7B60C78B285A4DD400DA91F3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B60C78A285A4DD400DA91F3 /* AppDelegate.m */; };
 		7B60C78E285A4DD400DA91F3 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B60C78D285A4DD400DA91F3 /* SceneDelegate.m */; };
@@ -23,6 +25,7 @@
 		7B99FFBC285BCF0E0091EA09 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B99FFBB285BCF0E0091EA09 /* DetailsViewController.m */; };
 		7B99FFBF285C44510091EA09 /* GridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B99FFBE285C44510091EA09 /* GridViewController.m */; };
 		7B99FFC2285C44AE0091EA09 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B99FFC1285C44AE0091EA09 /* CollectionViewCell.m */; };
+		7BC0DA10285FC58200B3AB31 /* YTPlayerView-iframe-player.html in Resources */ = {isa = PBXBuildFile; fileRef = 7BC0DA0F285FC58200B3AB31 /* YTPlayerView-iframe-player.html */; };
 		D10BC4653D7D3E3EDB58EE12 /* Pods_Flixter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DAA7C399D62CE8A4784267C /* Pods_Flixter.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +54,10 @@
 		4C0B5033403BCA9BAAD3BC67 /* Pods-Flixter-FlixterUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flixter-FlixterUITests.release.xcconfig"; path = "Target Support Files/Pods-Flixter-FlixterUITests/Pods-Flixter-FlixterUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4D2F45989C71582D5E5979FE /* Pods_FlixterTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlixterTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		72800E2F583B135D5DACF0AC /* Pods_Flixter_FlixterUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flixter_FlixterUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B061CB2285FA83D006E70C6 /* YTPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTPlayerView.h; sourceTree = "<group>"; };
+		7B061CB3285FA83D006E70C6 /* YTPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTPlayerView.m; sourceTree = "<group>"; };
+		7B061CBA285FA8FD006E70C6 /* YoutubeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YoutubeViewController.h; sourceTree = "<group>"; };
+		7B061CBB285FA8FD006E70C6 /* YoutubeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YoutubeViewController.m; sourceTree = "<group>"; };
 		7B3BDFD0285AA56100EFCB48 /* MovieCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieCell.h; sourceTree = "<group>"; };
 		7B3BDFD1285AA56100EFCB48 /* MovieCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieCell.m; sourceTree = "<group>"; };
 		7B60C786285A4DD400DA91F3 /* Flixter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flixter.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,6 +83,7 @@
 		7B99FFBE285C44510091EA09 /* GridViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GridViewController.m; sourceTree = "<group>"; };
 		7B99FFC0285C44AE0091EA09 /* CollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
 		7B99FFC1285C44AE0091EA09 /* CollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
+		7BC0DA0F285FC58200B3AB31 /* YTPlayerView-iframe-player.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "YTPlayerView-iframe-player.html"; sourceTree = "<group>"; };
 		7EF348EFDB36CB2C51B4A998 /* Pods-FlixterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlixterTests.release.xcconfig"; path = "Target Support Files/Pods-FlixterTests/Pods-FlixterTests.release.xcconfig"; sourceTree = "<group>"; };
 		B9D0021DD140AE3AF8A18E85 /* Pods-FlixterTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlixterTests.debug.xcconfig"; path = "Target Support Files/Pods-FlixterTests/Pods-FlixterTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -156,6 +164,9 @@
 		7B60C788285A4DD400DA91F3 /* Flixter */ = {
 			isa = PBXGroup;
 			children = (
+				7B061CB2285FA83D006E70C6 /* YTPlayerView.h */,
+				7BC0DA0F285FC58200B3AB31 /* YTPlayerView-iframe-player.html */,
+				7B061CB3285FA83D006E70C6 /* YTPlayerView.m */,
 				7B60C789285A4DD400DA91F3 /* AppDelegate.h */,
 				7B60C78A285A4DD400DA91F3 /* AppDelegate.m */,
 				7B60C78C285A4DD400DA91F3 /* SceneDelegate.h */,
@@ -175,6 +186,8 @@
 				7B60C79B285A4DD500DA91F3 /* main.m */,
 				7B3BDFD0285AA56100EFCB48 /* MovieCell.h */,
 				7B3BDFD1285AA56100EFCB48 /* MovieCell.m */,
+				7B061CBA285FA8FD006E70C6 /* YoutubeViewController.h */,
+				7B061CBB285FA8FD006E70C6 /* YoutubeViewController.m */,
 			);
 			path = Flixter;
 			sourceTree = "<group>";
@@ -306,6 +319,7 @@
 			files = (
 				7B60C799285A4DD500DA91F3 /* LaunchScreen.storyboard in Resources */,
 				7B60C796285A4DD500DA91F3 /* Assets.xcassets in Resources */,
+				7BC0DA10285FC58200B3AB31 /* YTPlayerView-iframe-player.html in Resources */,
 				7B60C794285A4DD400DA91F3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -436,7 +450,9 @@
 			files = (
 				7B60C78B285A4DD400DA91F3 /* AppDelegate.m in Sources */,
 				7B3BDFD2285AA56100EFCB48 /* MovieCell.m in Sources */,
+				7B061CB4285FA83D006E70C6 /* YTPlayerView.m in Sources */,
 				7B60C79C285A4DD500DA91F3 /* main.m in Sources */,
+				7B061CBC285FA8FD006E70C6 /* YoutubeViewController.m in Sources */,
 				7B99FFBF285C44510091EA09 /* GridViewController.m in Sources */,
 				7B99FFBC285BCF0E0091EA09 /* DetailsViewController.m in Sources */,
 				7B60C78E285A4DD400DA91F3 /* SceneDelegate.m in Sources */,

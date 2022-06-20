@@ -8,7 +8,8 @@
 #import "GridViewController.h"
 #import "CollectionViewCell.h"
 #import "UIImageView+AFNetworking.h"
-#import "DetailsViewController.h""
+#import "DetailsViewController.h"
+#import "YoutubeViewController.h"
 
 @interface GridViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 @property (nonatomic, strong) NSArray *myArray;
@@ -53,7 +54,7 @@
                NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
                // TODO: Get the array of movies
 //               NSArray*keys=[dataDictionary allKeys]; // getting all keys in data dictionary
-               NSLog(@"%@", dataDictionary);// log an object with the %@ formatter.
+               // NSLog(@"%@", dataDictionary);// log an object with the %@ formatter.
 //             // TODO: Store the movies in a property to use elsewhere
                self.myArray = dataDictionary[@"results"];
                // TODO: Reload your collection view data
@@ -97,10 +98,9 @@
     NSDictionary *dataToPass = self.myArray[myIndexPath.row];
     // Get the new view controller using [segue destinationViewController].
     // [segue destinationViewController] is a reference to the view controller that is going to be popped onto the navigation stack
-    DetailsViewController *detailVC = [segue destinationViewController];
-    // Pass the selected object to the new view controller.
-    detailVC.detailDict = dataToPass;
-    detailVC.myPath = myIndexPath;
+    YoutubeViewController *youtubeVC = [segue destinationViewController];
+//    // Pass the selected object to the new view controller.
+    youtubeVC.movie_id = dataToPass[@"id"];
 }
 
 
